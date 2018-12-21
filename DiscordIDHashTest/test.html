@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Discord ID Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
+</head>
+
+<body>
+    <canvas id="myChart" width="400" height="400"></canvas>
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var scatterChart = new Chart(ctx, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'Scatter Dataset',
+                    backgroundColor: 'red',
+                    data: [{
+                        x: -5,
+                        y: 3
+                    }, {
+                        x: 3,
+                        y: 2
+                    }, {
+                        x: 4,
+                        y: 5
+                    }]
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        type: 'linear',
+                        position: 'bottom'
+                    }]
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
