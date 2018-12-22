@@ -6,15 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Discord ID Test</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
+    <script src="libraries/Chart.bundle.js"></script>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+        }
+    </style>
 </head>
 
 <body>
-    <canvas id="myChart" width="400" height="400"></canvas>
+    <canvas id="myChart" width="200" height="200"></canvas>
     <script>
         var ctx = document.getElementById('myChart').getContext('2d');
         var scatterChart = new Chart(ctx, {
             type: 'scatter',
+            maintainAspectRatio: false,
             data: {
                 datasets: [{
                     label: 'Scatter Dataset',
@@ -35,8 +42,20 @@
                 scales: {
                     xAxes: [{
                         type: 'linear',
-                        position: 'bottom'
-                    }]
+                        position: 'bottom',
+                        ticks: {
+                            max: 25,
+                            min: 0
+                        }
+                    }],
+                    yAxes: [{
+                        type: 'linear',
+                        position: 'bottom',
+                        ticks: {
+                            max: 25,
+                            min: 0
+                        }
+                    }],
                 }
             }
         });
