@@ -38,7 +38,7 @@ function record(data) {
     }
 }
 
-let times = 1300;
+let times = 6760;
 
 function startTest() {
     output = [];
