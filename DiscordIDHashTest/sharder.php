@@ -17,4 +17,4 @@ function string2shard($id)
     ));
 }
 
-var_dump(string2shard('test'));
+echo string2shard($_GET['id']);
