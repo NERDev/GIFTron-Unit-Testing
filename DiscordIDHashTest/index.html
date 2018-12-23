@@ -7,6 +7,7 @@
     <title>Discord ID Test</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="libraries/Chart.bundle.js"></script>
+    <script src="test.js"></script>
     <style>
         body {
             margin: auto;
@@ -18,10 +19,11 @@
 </head>
 
 <body>
-    <canvas id="myChart" width="200" height="200"></canvas>
+    <canvas id="myChart" width="200" height="200" onclick="startTest()"></canvas>
     <script>
+        const alphabet = 'abcdefghijklmnopqrstuvwxyz';
         function letterize(value) {
-            return 'abcdefghijklmnopqrstuvwxyz'[value];
+            return alphabet[value];
         }
         var ctx = document.getElementById('myChart').getContext('2d');
         var scatterChart = new Chart(ctx, {
@@ -29,17 +31,7 @@
             data: {
                 datasets: [{
                     label: 'Scatter Dataset',
-                    backgroundColor: 'red',
-                    data: [{
-                        x: 5,
-                        y: 3
-                    }, {
-                        x: 3,
-                        y: 2
-                    }, {
-                        x: 4,
-                        y: 5
-                    }]
+                    backgroundColor: 'red'
                 }]
             },
             options: {
